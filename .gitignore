@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Secrets and Keys
+.env
+
+# Virtual Environments (The heavy library folders)
+.venv/
+venv/
+env/
+
+# Python Cache (Makes your repo cleaner)
+__pycache__/
+*.pyc

@@ -76,3 +76,22 @@ html, body, .stApp {
     background-size: cover;
 }
 
+/* --- DARK MODE FIX: FORCE VISIBILITY --- */
+
+/* 1. Ensure the main container stays light-themed so your tropical colors work */
+.stApp {
+    background: linear-gradient(to bottom right, #fffbe6, #e0f7fa, #ffe0f0) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
+
+/* 2. Force text to stay dark grey so it's readable against the light background */
+/* This targets almost all text elements in Streamlit */
+.stApp p, .stApp span, .stApp label, .stApp div, .stChatMessage p {
+    color: #333333 !important;
+}
+
+/* 3. Ensure the chat input text is also dark and visible */
+.stChatInput textarea {
+    color: #333333 !important;
+}

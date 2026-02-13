@@ -46,13 +46,18 @@ if prompt := st.chat_input("Ask GemiQuest about your next trip!"):
 
     # 6. Generate Response
     try:
+        response = client.models.generate_content(
+            model=MODEL_ID,
+            contents=formatted_history, # This is the key!
+            config={'system_instruction': SYSTEM_PROMPT}
+)
         # Use st.spinner so the user knows the bot is working
-        with st.spinner("GemiQuest is thinking..."):
-            response = client.models.generate_content(
-                model=MODEL_ID,
-                contents=formatted_history,
-                config={'system_instruction': SYSTEM_PROMPT}
-            )
+        # with st.spinner("GemiQuest is thinking..."):
+        #     response = client.models.generate_content(
+        #         model=MODEL_ID,
+        #         contents=formatted_history,
+        #         config={'system_instruction': SYSTEM_PROMPT}
+        #     )
         
         # Display and save response
         with st.chat_message("assistant"):

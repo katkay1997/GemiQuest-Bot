@@ -8,7 +8,7 @@ dotenv.load_dotenv()
 api_key = os.getenv("API_KEY")
 client = genai.Client(api_key=api_key)
 
-MODEL_ID = "gemini-2.5-flash"
+MODEL_ID = "gemini-1.5-flash"
 SYSTEM_PROMPT = "You are GemiQuest, a creative chatterbox travel guide. Answer with imagination and helpful travel tips!"
 
 # Load CSS
@@ -38,7 +38,7 @@ if prompt := st.chat_input("Ask GemiQuest about your next trip!"):
     # 5. Format History for the 1.63.0 SDK
     # We must convert Streamlit's "assistant" role to Gemini's "model" role
     formatted_history = []
-    for msg in st.session_state.messages:
+    for msg in st.session_state.messages[-10:]:
         formatted_history.append({
             "role": "user" if msg["role"] == "user" else "model",
             "parts": [{"text": msg["content"]}] # Strict requirement: list of dicts

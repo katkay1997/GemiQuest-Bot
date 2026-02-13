@@ -1,8 +1,8 @@
 /* Base styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #f0f8ff, #e0ffe0);  /* Sky blue to light green */
-    color: #333 !important;
+    background: linear-gradient(to bottom right, #f0f8ff, #e0ffe0);
+    color: var(--text-color) !important; 
 }
 
 /* Title and header tweaks */

@@ -1,0 +1,78 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #f0f8ff, #e0ffe0);  /* Sky blue to light green */
+    color: #333 !important;
+}
+
+/* Title and header tweaks */
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #ff6347 !important; /* Tomato red */
+    background: linear-gradient(to right, #ffcccb, #ffe4b5);  /* Soft pink to moccasin */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Chat messages - both user and assistant */
+div[data-testid="stChatMessage"] {
+    background-color: #ffffffcc; /* Semi-transparent white */
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* User messages */
+div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatar"] svg[aria-label="user"]) {
+    background-color: #ffe4b5 !important; /* Light tan */
+}
+
+/* Assistant messages */
+div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatar"] svg[aria-label="assistant"]) {
+    background-color: #e0ffff !important; /* Light cyan */
+}
+
+/* Chat input styling */
+div[data-testid="stChatInput"] {
+    background-color: #f5fffa !important;  /* Mint cream */
+    border-radius: 20px;
+    border: 2px solid #add8e6;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Send button hover effect */
+button[kind="primary"]:hover {
+    background-color: #20b2aa !important;  /* Light sea green */
+    color: white !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    div[data-testid="stChatMessage"] {
+        padding: 10px;
+    }
+}
+
+
+section.main > div {
+    background: linear-gradient(to bottom right, #ffecd2, #fcb69f, #ff9a9e); /* Tropical sunset */
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+/* ...your existing styles... */
+
+html, body, .stApp {
+    background: linear-gradient(to bottom right, #fffbe6, #e0f7fa, #ffe0f0) !important;
+    background-attachment: fixed;
+    background-size: cover;
+}
+

@@ -38,17 +38,17 @@ if prompt := st.chat_input("Ask GemiQuest about your next trip!"):
     # 5. Format History for the 1.63.0 SDK
     # We must convert Streamlit's "assistant" role to Gemini's "model" role
     formatted_history = []
-    for msg in st.session_state.messages[-10:]:
+    for msg in st.session_state.messages[-6:]:
         formatted_history.append({
             "role": "user" if msg["role"] == "user" else "model",
-            "parts": [{"text": msg["content"]}] # Strict requirement: list of dicts
+            "parts": [{"text": msg["content"]}] 
         })
 
     # 6. Generate Response
     try:
         response = client.models.generate_content(
             model=MODEL_ID,
-            contents=formatted_history, # This is the key!
+            contents=formatted_history, 
             config={'system_instruction': SYSTEM_PROMPT}
 )
         # Use st.spinner so the user knows the bot is working

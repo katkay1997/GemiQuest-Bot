@@ -8,7 +8,7 @@ dotenv.load_dotenv()
 api_key = os.getenv("API_KEY")
 client = genai.Client(api_key=api_key)
 
-MODEL_ID = "gemini-1.5-flash"
+MODEL_ID = "gemini-2.5-flash"
 SYSTEM_PROMPT = "You are GemiQuest, a creative chatterbox travel guide. Answer with imagination and helpful travel tips!"
 
 # Load CSS

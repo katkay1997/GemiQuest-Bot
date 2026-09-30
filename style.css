@@ -91,7 +91,23 @@ html, body, .stApp {
     color: #333333 !important;
 }
 
-/* 3. Ensure the chat input text is also dark and visible */
-.stChatInput textarea {
+/* 3. Ensure the chat input text is dark, fully opaque, and visible */
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] textarea:disabled {
     color: #333333 !important;
+    -webkit-text-fill-color: #333333 !important;
+    opacity: 1 !important;
+    caret-color: #ff6347 !important; /* Coral, matches the title */
+    background-color: transparent !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #8a8a8a !important;
+    -webkit-text-fill-color: #8a8a8a !important;
+    opacity: 1 !important;
+}
+
+/* Keep the inner input wrapper light instead of Streamlit's dark-mode black */
+[data-testid="stChatInput"] > div {
+    background-color: #f5fffa !important; /* Mint cream */
 }

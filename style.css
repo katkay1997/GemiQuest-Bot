@@ -111,3 +111,31 @@ html, body, .stApp {
 [data-testid="stChatInput"] > div {
     background-color: #f5fffa !important; /* Mint cream */
 }
+
+/* 4. The field itself is drawn by two BaseWeb wrappers around the textarea, which
+   Streamlit fills with its dark-mode secondary background. Pin them to the
+   light-mode value so the dark text above stays readable in both themes. */
+[data-testid="stChatInput"] [data-baseweb="textarea"],
+[data-testid="stChatInput"] [data-baseweb="base-input"] {
+    background-color: #f0f2f6 !important; /* Streamlit's light-mode input grey */
+}
+
+/* 5. The sticky strip behind the chat input uses the theme background (near-black in dark mode) */
+[data-testid="stBottom"] > div {
+    background-color: #ffffff !important;
+}
+
+/* 6. Send button: same greys as light mode, so the icon shows on the light field.
+   Hover is left alone so Streamlit's own highlight colour still applies. */
+[data-testid="stChatInputSubmitButton"]:not(:disabled):not(:hover) {
+    color: #555867 !important;
+}
+
+[data-testid="stChatInputSubmitButton"]:disabled {
+    color: #a3a8b8 !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stChatInputSubmitButton"]:focus-visible {
+    background-color: #fafafa !important;
+}
